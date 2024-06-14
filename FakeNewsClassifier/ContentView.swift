@@ -26,8 +26,7 @@ struct ContentView: View {
             )
             
             Button {
-                // Change it with actual model response
-                result = "Fake or Not Fake"
+                result = ModelController.classify(input: inputText)
                 showAlert = true
             } label: {
                 Text("Detect")
@@ -41,7 +40,6 @@ struct ContentView: View {
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Response"),
-                    // Add probability of each classes??
                     message: Text("The result of classification: \(result)"),
                     dismissButton: .default(Text("OK")))
             }

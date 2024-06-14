@@ -12,6 +12,7 @@
 		900266752C1C722D000AE46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900266742C1C722D000AE46B /* Assets.xcassets */; };
 		900266792C1C722D000AE46B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900266782C1C722D000AE46B /* Preview Assets.xcassets */; };
 		90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */; };
+		90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E35B2C1C7BD7008CF43B /* ModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		900266762C1C722D000AE46B /* FakeNewsClassifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakeNewsClassifier.entitlements; sourceTree = "<group>"; };
 		900266782C1C722D000AE46B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BetaFakeNewsClassifier.mlmodel; sourceTree = "<group>"; };
+		90F1E35B2C1C7BD7008CF43B /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		9002666F2C1C722C000AE46B /* FakeNewsClassifier */ = {
 			isa = PBXGroup;
 			children = (
+				90F1E35A2C1C7BBB008CF43B /* Controller */,
 				900266702C1C722C000AE46B /* FakeNewsClassifierApp.swift */,
 				900266722C1C722C000AE46B /* ContentView.swift */,
 				900266742C1C722D000AE46B /* Assets.xcassets */,
@@ -70,6 +73,14 @@
 				900266782C1C722D000AE46B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		90F1E35A2C1C7BBB008CF43B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				90F1E35B2C1C7BD7008CF43B /* ModelController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */,
+				90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */,
 				900266732C1C722C000AE46B /* ContentView.swift in Sources */,
 				900266712C1C722C000AE46B /* FakeNewsClassifierApp.swift in Sources */,
 			);
