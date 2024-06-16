@@ -13,6 +13,9 @@
 		900266792C1C722D000AE46B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900266782C1C722D000AE46B /* Preview Assets.xcassets */; };
 		90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */; };
 		90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E35B2C1C7BD7008CF43B /* ModelController.swift */; };
+		A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */; };
+		A56584152C1E0F9B001AB7C2 /* RequestHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */; };
+		A56584182C1E102E001AB7C2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584172C1E102E001AB7C2 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		900266782C1C722D000AE46B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BetaFakeNewsClassifier.mlmodel; sourceTree = "<group>"; };
 		90F1E35B2C1C7BD7008CF43B /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryList.swift; sourceTree = "<group>"; };
+		A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryCell.swift; sourceTree = "<group>"; };
+		A56584172C1E102E001AB7C2 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,8 @@
 		9002666F2C1C722C000AE46B /* FakeNewsClassifier */ = {
 			isa = PBXGroup;
 			children = (
+				A56584162C1E1024001AB7C2 /* Model */,
+				A56584112C1E0F82001AB7C2 /* Views */,
 				90F1E35A2C1C7BBB008CF43B /* Controller */,
 				900266702C1C722C000AE46B /* FakeNewsClassifierApp.swift */,
 				900266722C1C722C000AE46B /* ContentView.swift */,
@@ -81,6 +89,23 @@
 				90F1E35B2C1C7BD7008CF43B /* ModelController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A56584112C1E0F82001AB7C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */,
+				A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A56584162C1E1024001AB7C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A56584172C1E102E001AB7C2 /* Request.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56584152C1E0F9B001AB7C2 /* RequestHistoryCell.swift in Sources */,
 				90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */,
+				A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */,
 				90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */,
+				A56584182C1E102E001AB7C2 /* Request.swift in Sources */,
 				900266732C1C722C000AE46B /* ContentView.swift in Sources */,
 				900266712C1C722C000AE46B /* FakeNewsClassifierApp.swift in Sources */,
 			);
@@ -286,7 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FakeNewsClassifier/Preview Content\"";
-				DEVELOPMENT_TEAM = 953D823BK7;
+				DEVELOPMENT_TEAM = 24TT693G4C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -308,7 +336,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.sovyak.FakeNewsClassifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,7 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FakeNewsClassifier/Preview Content\"";
-				DEVELOPMENT_TEAM = 953D823BK7;
+				DEVELOPMENT_TEAM = 24TT693G4C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -346,7 +375,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.sovyak.FakeNewsClassifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
