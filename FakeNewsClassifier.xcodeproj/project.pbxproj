@@ -11,6 +11,7 @@
 		900266732C1C722C000AE46B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900266722C1C722C000AE46B /* ContentView.swift */; };
 		900266752C1C722D000AE46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900266742C1C722D000AE46B /* Assets.xcassets */; };
 		900266792C1C722D000AE46B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900266782C1C722D000AE46B /* Preview Assets.xcassets */; };
+		904824472C2745DE00F1205B /* FakeNewsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 904824462C2745DE00F1205B /* FakeNewsClassifier.mlmodel */; };
 		90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */; };
 		90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E35B2C1C7BD7008CF43B /* ModelController.swift */; };
 		A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */; };
@@ -25,6 +26,7 @@
 		900266742C1C722D000AE46B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		900266762C1C722D000AE46B /* FakeNewsClassifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakeNewsClassifier.entitlements; sourceTree = "<group>"; };
 		900266782C1C722D000AE46B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		904824462C2745DE00F1205B /* FakeNewsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FakeNewsClassifier.mlmodel; sourceTree = "<group>"; };
 		90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BetaFakeNewsClassifier.mlmodel; sourceTree = "<group>"; };
 		90F1E35B2C1C7BD7008CF43B /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryList.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		900266642C1C722C000AE46B = {
 			isa = PBXGroup;
 			children = (
+				904824462C2745DE00F1205B /* FakeNewsClassifier.mlmodel */,
 				90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */,
 				9002666F2C1C722C000AE46B /* FakeNewsClassifier */,
 				9002666E2C1C722C000AE46B /* Products */,
@@ -181,6 +184,7 @@
 				A56584152C1E0F9B001AB7C2 /* RequestHistoryCell.swift in Sources */,
 				90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */,
 				A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */,
+				904824472C2745DE00F1205B /* FakeNewsClassifier.mlmodel in Sources */,
 				90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */,
 				A56584182C1E102E001AB7C2 /* Request.swift in Sources */,
 				900266732C1C722C000AE46B /* ContentView.swift in Sources */,

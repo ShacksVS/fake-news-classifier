@@ -17,6 +17,7 @@ struct ContentView: View {
             TextEditor(
                 text: $inputText
             )
+            .autocorrectionDisabled()
             .frame(width: 332, height: 100)
             .padding(EdgeInsets(top: 12, leading: 15, bottom: 12, trailing: 15))
             .cornerRadius(50)
@@ -34,7 +35,7 @@ struct ContentView: View {
             }
             .frame(width: 100, height: 50)
             .foregroundColor(.primary)
-            .background(Color(UIColor.systemYellow))
+            .background(Color(.systemYellow))
             .cornerRadius(10)
             .padding(.top)
             .alert(isPresented: $showAlert) {

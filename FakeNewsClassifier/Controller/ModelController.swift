@@ -11,7 +11,7 @@ import CoreML
 class ModelController {
     static func classify(input inputText: String) -> String {
         do {
-            let model = try BetaFakeNewsClassifier(configuration: .init())
+            let model = try FakeNewsClassifier(configuration: .init())
             let prediction = try model.prediction(text: inputText)
             return prediction.label
         } catch {
