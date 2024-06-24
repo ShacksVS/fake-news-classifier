@@ -12,10 +12,13 @@ struct RequestHistoryCell: View {
     var body: some View {
         HStack {
             Text(request.requestString)
-                .frame(maxWidth: .infinity, maxHeight: 100)
+                .font(.system(size: 16).bold())
+                .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
                 .padding(.leading, 13)
+            Spacer()
             Text(request.result.rawValue.uppercased())
                 .foregroundStyle(request.result.rawValue == "fake" ? .red : .green)
+                .bold()
                 .padding(.trailing, 13)
         }
     }

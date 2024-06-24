@@ -9,16 +9,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @Binding var sharedText: String?
     @State private var inputText = ""
     @State private var showAlert = false
-    @Binding var sharedText: String?
     @State private var result = ""
-    private var requests: [MyRequest] = []
+    @FocusState private var isFocused: Bool
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Requests.dateTime, ascending: true)],
         animation: .default)
+    
     private var items: FetchedResults<Requests>
     
     public init(sharedText: Binding<String?>) {
@@ -26,20 +26,31 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack (spacing: 0) {
             Text("Check the news")
                 .font(.title)
                 .bold()
-                .padding()
-            TextEditor(text: $inputText)
-                .frame(width: 332, height: 100)
-                .padding(EdgeInsets(top: 12, leading: 15, bottom: 12, trailing: 15))
-                .cornerRadius(50)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.primary, lineWidth: 1)
-                )
-            
+                .padding(.vertical, 10)
+            Divider()
+                .background(.primary)
+            VStack {
+                Text("Input your text here:")
+                    .font(.title2)
+                    .fontWeight(.medium)
+                    .padding(.leading, 20)
+                    .padding(.top, 30)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                TextEditor(text: $inputText)
+                    .frame(width: 360, height: 200)
+                    .padding(EdgeInsets(top: 12, leading: 15, bottom: 5, trailing: 15))
+                    .cornerRadius(50)
+                    .focused($isFocused)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(isFocused ? Color.yellow : Color.primary, lineWidth: 1)
+                    )
+                    .tint(.black)
+            }
             Button {
                 result = ModelController.classify(input: inputText)
                 print(result)
@@ -47,13 +58,12 @@ struct ContentView: View {
                 showAlert = true
             } label: {
                 Text("Detect")
-                    .font(.system(size: 16))
+                    .font(.system(size: 22))
             }
-            .frame(width: 100, height: 50)
+            .frame(width: 130, height: 50)
             .foregroundColor(.primary)
             .background(Color(.systemYellow))
             .cornerRadius(10)
-            .padding(.top)
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Response"),
@@ -62,9 +72,12 @@ struct ContentView: View {
             }
             .padding()
             
+            Divider()
+                .background(.primary)
+                .padding(.bottom, 10)
+            
             RequestHistoryView(lastRequests: convertToMyRequests(requests: fetchLastRequests()))
-                .background(.requests)
-            Spacer()
+                .ignoresSafeArea()
         }
         .onAppear {
             if let sharedText = sharedText {
