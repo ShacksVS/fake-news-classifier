@@ -16,9 +16,9 @@
 		90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1E35B2C1C7BD7008CF43B /* ModelController.swift */; };
 		A535E15C2C29735C0009CF9C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535E15B2C29735C0009CF9C /* Persistence.swift */; };
 		A535E15E2C2976DD0009CF9C /* MyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535E15D2C2976DD0009CF9C /* MyRequest.swift */; };
-		A55426AE2C256E0500AE6113 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55426AC2C256E0500AE6113 /* Model.xcdatamodeld */; };
 		A560E5392C29A0720017825B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560E5382C29A0720017825B /* ShareViewController.swift */; };
 		A560E5402C29A0720017825B /* FakeNewsClassifierShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A560E5362C29A0720017825B /* FakeNewsClassifierShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A560E54C2C29DCDE0017825B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A560E54A2C29DCDE0017825B /* Model.xcdatamodeld */; };
 		A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */; };
 		A56584152C1E0F9B001AB7C2 /* RequestHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */; };
 /* End PBXBuildFile section */
@@ -60,11 +60,11 @@
 		A535E15B2C29735C0009CF9C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A535E15D2C2976DD0009CF9C /* MyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequest.swift; sourceTree = "<group>"; };
 		A55426AB2C24FA9F00AE6113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		A55426AD2C256E0500AE6113 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A560E5362C29A0720017825B /* FakeNewsClassifierShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FakeNewsClassifierShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A560E5382C29A0720017825B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		A560E53D2C29A0720017825B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A560E5442C29A3200017825B /* FakeNewsClassifierShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakeNewsClassifierShare.entitlements; sourceTree = "<group>"; };
+		A560E54B2C29DCDE0017825B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryList.swift; sourceTree = "<group>"; };
 		A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 		900266642C1C722C000AE46B = {
 			isa = PBXGroup;
 			children = (
-				A55426AC2C256E0500AE6113 /* Model.xcdatamodeld */,
+				A560E54A2C29DCDE0017825B /* Model.xcdatamodeld */,
 				904824462C2745DE00F1205B /* FakeNewsClassifier.mlmodel */,
 				90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */,
 				9002666F2C1C722C000AE46B /* FakeNewsClassifier */,
@@ -273,9 +273,9 @@
 				A535E15E2C2976DD0009CF9C /* MyRequest.swift in Sources */,
 				90F1E3592C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel in Sources */,
 				A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */,
-				A55426AE2C256E0500AE6113 /* Model.xcdatamodeld in Sources */,
 				904824472C2745DE00F1205B /* FakeNewsClassifier.mlmodel in Sources */,
 				90F1E35C2C1C7BD7008CF43B /* ModelController.swift in Sources */,
+				A560E54C2C29DCDE0017825B /* Model.xcdatamodeld in Sources */,
 				900266732C1C722C000AE46B /* ContentView.swift in Sources */,
 				900266712C1C722C000AE46B /* FakeNewsClassifierApp.swift in Sources */,
 			);
@@ -586,12 +586,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A55426AC2C256E0500AE6113 /* Model.xcdatamodeld */ = {
+		A560E54A2C29DCDE0017825B /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A55426AD2C256E0500AE6113 /* Model.xcdatamodel */,
+				A560E54B2C29DCDE0017825B /* Model.xcdatamodel */,
 			);
-			currentVersion = A55426AD2C256E0500AE6113 /* Model.xcdatamodel */;
+			currentVersion = A560E54B2C29DCDE0017825B /* Model.xcdatamodel */;
 			name = Model.xcdatamodeld;
 			path = "/Users/daniil/Developer/fake-news-classifier/Model.xcdatamodeld";
 			sourceTree = "<group>";
