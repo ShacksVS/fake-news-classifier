@@ -11,6 +11,7 @@ import CoreData
 struct ContentView: View {
     @State private var inputText = ""
     @State private var showAlert = false
+    @Binding var sharedText: String?
     @State private var result = ""
     private var requests: [MyRequest] = []
     @Environment(\.managedObjectContext) private var viewContext
@@ -19,6 +20,10 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Requests.dateTime, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Requests>
+    
+    public init(sharedText: Binding<String?>) {
+        self._sharedText = sharedText
+    }
     
     var body: some View {
         VStack {
@@ -37,7 +42,8 @@ struct ContentView: View {
             
             Button {
                 result = ModelController.classify(input: inputText)
-                addItem(myRequest: MyRequest(requestString: inputText, result: Result(rawValue: result) ?? .fake))
+                print(result)
+                addItem(myRequest: MyRequest(requestString: inputText, result: Result(rawValue: result.lowercased()) ?? .fake))
                 showAlert = true
             } label: {
                 Text("Detect")
@@ -56,12 +62,15 @@ struct ContentView: View {
             }
             .padding()
             
-            RequestHistoryView(lastRequests: convertToMyRequests(requests: fetchLast10Requests()))
+            RequestHistoryView(lastRequests: convertToMyRequests(requests: fetchLastRequests()))
                 .background(.requests)
             Spacer()
         }
-        .onDisappear {
-            
+        .onAppear {
+            if let sharedText = sharedText {
+                inputText = sharedText
+                self.sharedText = nil
+            }
         }
     }
     
@@ -70,7 +79,7 @@ struct ContentView: View {
             let newRequest = Requests(context: viewContext)
             newRequest.id = myRequest.id
             newRequest.text = myRequest.requestString
-            newRequest.result = myRequest.result.rawValue == "fake" ? true : false
+            newRequest.result = myRequest.result.rawValue == "positive" ? true : false
             newRequest.dateTime = Date()
             
             do {
@@ -82,10 +91,10 @@ struct ContentView: View {
         }
     }
     
-    private func fetchLast10Requests() -> [Requests] {
+    private func fetchLastRequests() -> [Requests] {
         let fetchRequest: NSFetchRequest<Requests> = Requests.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Requests.dateTime, ascending: false)]
-        fetchRequest.fetchLimit = 10
+        fetchRequest.fetchLimit = 20
         
         do {
             return try viewContext.fetch(fetchRequest)
@@ -97,11 +106,11 @@ struct ContentView: View {
     
     private func convertToMyRequests(requests: [Requests]) -> [MyRequest] {
         return requests.map {
-            MyRequest(requestString: $0.text ?? "", result: $0.result ? .truth : .fake)
+            MyRequest(requestString: $0.text ?? "", result: $0.result ? .positive : .fake)
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(sharedText: .constant("123"))
 }

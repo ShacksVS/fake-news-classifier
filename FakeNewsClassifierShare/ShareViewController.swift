@@ -34,7 +34,7 @@ class ShareViewController: UIViewController {
                 
                 if let text = providedText as? String {
                     DispatchQueue.main.async {
-                        let contentView = UIHostingController(rootView: ShareView(text: text))
+                        let contentView = UIHostingController(rootView: ShareView(text: text, extensionContext: self.extensionContext))
                         contentView.view.frame = self.view.frame
                         self.view.addSubview(contentView.view)
                     }
@@ -60,10 +60,23 @@ class ShareViewController: UIViewController {
     func close() {
         self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
     }
+    
+    @objc 
+    func openURL(_ url: URL) -> Bool {
+        var responder: UIResponder? = self
+        while responder != nil {
+            if let application = responder as? UIApplication {
+                return application.perform(#selector(openURL(_:)), with: url) != nil
+            }
+            responder = responder?.next
+        }
+        return false
+    }
 }
 
 fileprivate struct ShareView: View {
     @State var text: String
+    var extensionContext: NSExtensionContext?
     
     var body: some View {
         VStack {
@@ -75,7 +88,7 @@ fileprivate struct ShareView: View {
                         Button("Cancel", action: dismiss)
                             .tint(.yellow)
                         Spacer()
-                        Button ("Save", action: dismiss)
+                        Button ("Save", action: save)
                             .tint(.yellow)
                     }
                 }
@@ -93,5 +106,22 @@ fileprivate struct ShareView: View {
     }
     private func dismiss() {
         NotificationCenter.default.post(name: NSNotification.Name("close"), object: nil)
+    }
+    
+    private func save() {
+        let urlScheme = "fakenewsclassifier://\(text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")"
+        if let url = URL(string: urlScheme) {
+            extensionContext?.open(url, completionHandler: { (success) in
+                if success {
+                    print("Opened URL: \(url)")
+                } else {
+                    print("Failed to open URL: \(url)")
+                }
+                self.dismiss()
+            })
+        } else {
+            print("Invalid URL")
+            self.dismiss()
+        }
     }
 }

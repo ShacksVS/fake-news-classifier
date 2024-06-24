@@ -9,7 +9,7 @@ import Foundation
 
 enum Result: String {
     case fake
-    case truth
+    case positive
 }
 
 struct MyRequest: Identifiable {
