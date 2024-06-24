@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct RequestHistoryCell: View {
-    let request: Request
+    let request: MyRequest
     var body: some View {
         HStack {
             Text(request.requestString)
-                .frame(maxWidth: 200, maxHeight: 100)
+                .frame(maxWidth: .infinity, maxHeight: 100)
+                .padding(.leading, 13)
             Text(request.result.rawValue.uppercased())
                 .foregroundStyle(request.result.rawValue == "fake" ? .red : .green)
+                .padding(.trailing, 13)
         }
-//        .padding(10)
     }
 }
 
 #Preview {
-    RequestHistoryCell(request: Request.mock)
+    RequestHistoryCell(request: MyRequest.mock)
 }

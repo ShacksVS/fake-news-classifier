@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RequestHistoryView: View {
-    let lastRequests: [Request] = [Request.mock, Request.mock,Request.mock,Request.mock,Request.mock,Request.mock,Request.mock,Request.mock,Request.mock,Request.mock]
+    let lastRequests: [MyRequest]
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(spacing: 10) {
                 ForEach (lastRequests) { request in
                     RequestHistoryCell(request: request)
                 }
@@ -21,5 +21,5 @@ struct RequestHistoryView: View {
 }
 
 #Preview {
-    RequestHistoryView()
+    RequestHistoryView(lastRequests: [MyRequest.mock, MyRequest.mock,MyRequest.mock,MyRequest.mock,MyRequest.mock,MyRequest.mock,MyRequest.mock,MyRequest.mock,MyRequest.mock,MyRequest.mock])
 }
