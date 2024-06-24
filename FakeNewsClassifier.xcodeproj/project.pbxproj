@@ -17,9 +17,21 @@
 		A535E15C2C29735C0009CF9C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535E15B2C29735C0009CF9C /* Persistence.swift */; };
 		A535E15E2C2976DD0009CF9C /* MyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535E15D2C2976DD0009CF9C /* MyRequest.swift */; };
 		A55426AE2C256E0500AE6113 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55426AC2C256E0500AE6113 /* Model.xcdatamodeld */; };
+		A560E5392C29A0720017825B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560E5382C29A0720017825B /* ShareViewController.swift */; };
+		A560E5402C29A0720017825B /* FakeNewsClassifierShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A560E5362C29A0720017825B /* FakeNewsClassifierShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A56584132C1E0F90001AB7C2 /* RequestHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */; };
 		A56584152C1E0F9B001AB7C2 /* RequestHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A560E53E2C29A0720017825B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 900266652C1C722C000AE46B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A560E5352C29A0720017825B;
+			remoteInfo = FakeNewsClassifierShare;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A560E4B92C297C570017825B /* Embed Foundation Extensions */ = {
@@ -28,6 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				A560E5402C29A0720017825B /* FakeNewsClassifierShare.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,12 +61,23 @@
 		A535E15D2C2976DD0009CF9C /* MyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequest.swift; sourceTree = "<group>"; };
 		A55426AB2C24FA9F00AE6113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A55426AD2C256E0500AE6113 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A560E5362C29A0720017825B /* FakeNewsClassifierShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FakeNewsClassifierShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A560E5382C29A0720017825B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		A560E53D2C29A0720017825B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A560E5442C29A3200017825B /* FakeNewsClassifierShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakeNewsClassifierShare.entitlements; sourceTree = "<group>"; };
 		A56584122C1E0F90001AB7C2 /* RequestHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryList.swift; sourceTree = "<group>"; };
 		A56584142C1E0F9B001AB7C2 /* RequestHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9002666A2C1C722C000AE46B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A560E5332C29A0720017825B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,6 +94,7 @@
 				904824462C2745DE00F1205B /* FakeNewsClassifier.mlmodel */,
 				90F1E3582C1C72B8008CF43B /* BetaFakeNewsClassifier.mlmodel */,
 				9002666F2C1C722C000AE46B /* FakeNewsClassifier */,
+				A560E5372C29A0720017825B /* FakeNewsClassifierShare */,
 				9002666E2C1C722C000AE46B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				9002666D2C1C722C000AE46B /* FakeNewsClassifier.app */,
+				A560E5362C29A0720017825B /* FakeNewsClassifierShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +141,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A560E5372C29A0720017825B /* FakeNewsClassifierShare */ = {
+			isa = PBXGroup;
+			children = (
+				A560E5442C29A3200017825B /* FakeNewsClassifierShare.entitlements */,
+				A560E5382C29A0720017825B /* ShareViewController.swift */,
+				A560E53D2C29A0720017825B /* Info.plist */,
+			);
+			path = FakeNewsClassifierShare;
+			sourceTree = "<group>";
+		};
 		A56584112C1E0F82001AB7C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,11 +183,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				A560E53F2C29A0720017825B /* PBXTargetDependency */,
 			);
 			name = FakeNewsClassifier;
 			productName = FakeNewsClassifier;
 			productReference = 9002666D2C1C722C000AE46B /* FakeNewsClassifier.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A560E5352C29A0720017825B /* FakeNewsClassifierShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A560E5432C29A0720017825B /* Build configuration list for PBXNativeTarget "FakeNewsClassifierShare" */;
+			buildPhases = (
+				A560E5322C29A0720017825B /* Sources */,
+				A560E5332C29A0720017825B /* Frameworks */,
+				A560E5342C29A0720017825B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeNewsClassifierShare;
+			productName = FakeNewsClassifierShare;
+			productReference = A560E5362C29A0720017825B /* FakeNewsClassifierShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -164,6 +218,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					9002666C2C1C722C000AE46B = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A560E5352C29A0720017825B = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -182,6 +239,7 @@
 			projectRoot = "";
 			targets = (
 				9002666C2C1C722C000AE46B /* FakeNewsClassifier */,
+				A560E5352C29A0720017825B /* FakeNewsClassifierShare */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +251,13 @@
 			files = (
 				900266792C1C722D000AE46B /* Preview Assets.xcassets in Resources */,
 				900266752C1C722D000AE46B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A560E5342C29A0720017825B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +281,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A560E5322C29A0720017825B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A560E5392C29A0720017825B /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A560E53F2C29A0720017825B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A560E5352C29A0720017825B /* FakeNewsClassifierShare */;
+			targetProxy = A560E53E2C29A0720017825B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9002667A2C1C722D000AE46B /* Debug */ = {
@@ -336,6 +417,7 @@
 		9002667D2C1C722D000AE46B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FakeNewsClassifier/FakeNewsClassifier.entitlements;
@@ -376,6 +458,7 @@
 		9002667E2C1C722D000AE46B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FakeNewsClassifier/FakeNewsClassifier.entitlements;
@@ -413,6 +496,63 @@
 			};
 			name = Release;
 		};
+		A560E5412C29A0720017825B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FakeNewsClassifierShare/FakeNewsClassifierShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 24TT693G4C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FakeNewsClassifierShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FakeNewsClassifierShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.ukma.FakeNewsClassifier.FakeNewsClassifierShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A560E5422C29A0720017825B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FakeNewsClassifierShare/FakeNewsClassifierShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 24TT693G4C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FakeNewsClassifierShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FakeNewsClassifierShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.ukma.FakeNewsClassifier.FakeNewsClassifierShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,6 +570,15 @@
 			buildConfigurations = (
 				9002667D2C1C722D000AE46B /* Debug */,
 				9002667E2C1C722D000AE46B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A560E5432C29A0720017825B /* Build configuration list for PBXNativeTarget "FakeNewsClassifierShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A560E5412C29A0720017825B /* Debug */,
+				A560E5422C29A0720017825B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
